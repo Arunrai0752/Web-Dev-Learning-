@@ -50,10 +50,11 @@ function validate() {
     .querySelectorAll(".error")
     .forEach((element) => (element.innerText = ""));
 
-  if (!/^[a-zA-Z]+$/.test(nm) || nm.length < 3) {
+  if (!/^[a-zA-Z]$/.test(nm) || nm.length < 3) {
     document.getElementById("nameError").innerText =
       "Only Alphabets Allowed & Minimum";
       isValid = false;
+
   }
 
 
@@ -61,13 +62,15 @@ function validate() {
     document.getElementById("emailError").innerText =
       " Please Enter A Valiid Email";
             isValid = false;
+
   }
 
-  if(!/^[6-9]\d(9)$/.test(ph)|| ph.length !==10)
+  if(!/^[6-9]\d{9}$/.test(ph)|| ph.length !== 10)
     {
 
         document.getElementById("phoneError").innerText = "Enter A Valid Indian number";
         isValid =false;
+
     }
 
     return isValid ;
